@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+    <tags>
+        <tag language="tmlc" />
+    </tags>
+    <strings>
+        <!--
+            Translation Notes:
+            This is the default localization file for Coroner.
+            
+            By default, any of the `FunnyNote` or `Death` strings are dynamically chosen at random.
+            If the `SeriousDeathMessages` option is enabled, the first `Death` message found in the file is used,
+                so make this one literal and specific.
+            The other ones can be puns or jokes, and options can be added or removed as needed, just make sure
+                to keep the correct tags, and make sure that there is at least one message for each `Death` type.
+        -->
+
+        <UINotes text="Notes: " /> <!-- TN: First line of the notes if the player hasn't died. -->
+        <UICauseOfDeath text="Cause of Death: " /> <!-- TN: First line of the notes if the player has died. -->
+
+        <!--
+            TN: Funny Notes
+            If the player has not died, and has no performance notes to display,
+            one of these will be chosen at random, so that nobody has no notes.
+        -->
+
+        <FunnyNote text="The cutest employee." />
+        <FunnyNote text="Had the most fun." />
+        <FunnyNote text="Had the least fun." />
+        <FunnyNote text="The bravest employee." />
+        <FunnyNote text="Did a sick flip." />
+        <FunnyNote text="Stubbed their toe." />
+        <FunnyNote text="The most likely to die next time." />
+        <FunnyNote text="The least likely to die next time." />
+        <FunnyNote text="Dislikes smoke." /> <!-- TN: Legend of Zelda reference -->
+        <FunnyNote text="A team player." />
+        <FunnyNote text="A real go-getter." />
+        <FunnyNote text="Ate the most snacks." />
+        <FunnyNote text="Got freaky on a Friday night." /> <!-- TN: Friday Night Funkin' reference -->
+        <FunnyNote text="I think this one's a serial killer." />
+        <FunnyNote text="Perfectly unremarkable." />
+        <FunnyNote text="Hasn't called their mother in a while." />
+        <FunnyNote text="Secretly a lizard." />
+        <FunnyNote text="The greatest asset." />
+        <FunnyNote text="NOT a great asset." />
+        <FunnyNote text="Scared of fire exits." />
+        <FunnyNote text="The most likely to lose equipment." />
+        <FunnyNote text="Won't go anywhere without a flashlight." />
+        <FunnyNote text="Sat on their phone the whole round." />
+        <FunnyNote text="A real scrap hoarder." />
+        <FunnyNote text="Monster bait." />
+        <FunnyNote text="Wants a promotion." />
+        <FunnyNote text="First in, last out." />
+        <FunnyNote text="The most likely to waste all of the credits." />
+        <FunnyNote text="The most likely to buy some furniture." />
+        <FunnyNote text="Has a nice suit." />
+        <FunnyNote text="The most selfish employee." />
+        <FunnyNote text="Probably left the stove on." />
+        <FunnyNote text="Scared of the dark." />
+        <FunnyNote text="Wants to hug a Bracken." />
+        <FunnyNote text="Yells YIPPEE at Hoarder Bugs." />
+        <FunnyNote text="Will eventually fail a jump across a gap." />
+        <FunnyNote text="Should probably just stay on the ship." />
+        <FunnyNote text="Sztywny git!" />
+        <FunnyNote text="Odkrecil kolka wozkowemu!" />
+
+        <!--
+            TN: Generic Death Messages
+            Generally, causes of death like bludgeoning, strangulation, and blasts will be overridden by messages specific to that type.
+            These are fallbacks for when there is no specific message. Try to make these broadly applicable.
+        -->
+
+        <DeathBludgeoning text="Bludgeoned to death." />
+        <DeathBludgeoning text="Had their skull cracked." />
+
+        <!-- 
+            <DeathGravity text="Fell to their death." />
+            <DeathGravity text="Fell off a cliff." />
+            <DeathGravity text="Experienced kinetic energy." />
+            <DeathGravity text="Failed a jump." />
+            <DeathGravity text="Shattered their kneecaps." />
+        -->
+
+        <DeathBlast text="Exploded." />
+        <DeathBlast text="Went out with a bang." />
+        <DeathBlast text="Reduced to ashes." />
+        <DeathBlast text="Experimented with explosives." />
+
+        <DeathStrangulation text="Strangled to death." />
+
+        <DeathSuffocation text="Suffocated to death." />
+
+        <DeathMauling text="Mauled to death." />
+
+        <DeathGunshots text="Shot to death." />
+        <DeathGunshots text="Filled to the brim with bullets." />
+
+        <DeathCrushing text="Crushed to death." />
+
+        <DeathDrowning text="Drowned to death." />
+        <DeathDrowning text="Ran out of oxygen." />
+
+        <DeathAbandoned text="Abandoned by their coworkers." />
+        <DeathAbandoned text="Was left for dead." />
+        <DeathAbandoned text="Didn't reach the ship in-time." />
+        <DeathAbandoned text="Failed to leave on the agreed hour." />
+
+        <DeathElectrocution text="Electrocuted to death." />
+        <DeathElectrocution text="Became a lightning rod." />
+
+        <DeathKicking text="Kicked to death." />
+
+        <!-- 
+            TN: Enemy Death Messages
+            These are messages for when the player is killed by a specific enemy.
+            Try to keep these high quality since they will be the ones players see the most.
+        -->
+
+        <DeathEnemyBracken text="Had their neck snapped by a Bracken." />
+        <DeathEnemyBracken text="Stared at a Bracken too long." />
+        <DeathEnemyBracken text="Fell victim to a Bracken." />
+        <DeathEnemyBracken text="Kidnapped by a Bracken." />
+        <DeathEnemyBracken text="Was engulfed by the shadows." />
+
+        <DeathEnemyEyelessDog text="Was eaten by an Eyeless Dog." />
+        <DeathEnemyEyelessDog text="Got caught using a mechanical keyboard." />
+        <DeathEnemyEyelessDog text="Wasn't quiet around an Eyeless Dog." />
+
+        <DeathEnemyForestGiant text="Swallowed whole by a Forest Giant." />
+        <DeathEnemyForestGiant text="Got caught sneaking by a Forest Giant." />
+
+        <DeathEnemyCircuitBees text="Electro-stung to death by Circuit Bees." />
+        <DeathEnemyCircuitBees text="Became a living battery." />
+
+        <DeathEnemyGhostGirl text="Succumbed to insanity." />
+        <DeathEnemyGhostGirl text="Lost their mind." />
+        <DeathEnemyGhostGirl text="Was a poor playmate." />
+        <DeathEnemyGhostGirl text="???" />
+
+        <DeathEnemyEarthLeviathan text="Swallowed whole by an Earth Leviathan." />
+        <DeathEnemyEarthLeviathan text="Witnessed the earth open up beneath them." />
+
+        <DeathEnemyBaboonHawk text="Was eaten by a Baboon Hawk." />
+        <DeathEnemyBaboonHawk text="Was mauled by a Baboon Hawk." />
+        <DeathEnemyBaboonHawk text="Was mistaken for loot by a Baboon Hawk." />
+
+        <DeathEnemyJester text="Devoured by a Jester." />
+        <DeathEnemyJester text="Witnessed a horrific surprise." />
+        <DeathEnemyJester text="Got pranked by the Jester." />
+        <DeathEnemyJester text="Got popped like a weasel." /> <!-- TN: "Pop Goes The Weasel" is the song used by Jack-in-the-box toys. -->
+
+        <DeathEnemyCoilHead text="Had their head replaced by a Coil Head." />
+        <DeathEnemyCoilHead text="Got in a staring contest with a Coil Head." />
+        <DeathEnemyCoilHead text="Lost a staring contest with a Coil Head." />
+        <DeathEnemyCoilHead text="Felt the urge to blink in front of a Coil Head." />
+
+        <DeathEnemySnareFlea text="Was suffocated by a Snare Flea." />
+        <DeathEnemySnareFlea text="Became the prey of a Snare Flea." />
+        <DeathEnemySnareFlea text="Forgot to look up." />
+
+        <DeathEnemyHygrodere text="Was absorbed by a Hygrodere." />
+        <DeathEnemyHygrodere text="Melted by a Hydrodere." />
+        <DeathEnemyHygrodere text="Slipped and fell into a Hygrodere." />
+
+        <DeathEnemyHoarderBug text="Was mauled by a Hoarder Bug." />
+        <DeathEnemyHoarderBug text="Was swarmed by a Hoarder Bug." />
+        <DeathEnemyHoarderBug text="Was hoarded by a Hoarder Bug." />
+        <DeathEnemyHoarderBug text="Tried to steal from a Hoarder Bug." />
+        <DeathEnemyHoarderBug text="Didn't respect the personal space of a Hoarder Bug." />
+        <DeathEnemyHoarderBug text="Became an addition to the nest of a Hoarder Bug." />
+
+        <DeathEnemySporeLizard text="Was bitten by a Spore Lizard." />
+        <DeathEnemySporeLizard text="Was puffed by a Spore Lizard." />
+        <DeathEnemySporeLizard text="Died embarassingly to a Spore Lizard." />
+
+        <DeathEnemyBunkerSpider text="Was ensnared in the Bunker Spider's web." />
+        <DeathEnemyBunkerSpider text="Tried to sneak past a Bunker Spider." />
+        <DeathEnemyBunkerSpider text="Disturbed a Bunker Spider." />
+        <DeathEnemyBunkerSpider text="Experienced arachnophobia in their last moments." />
+
+        <DeathEnemyThumper text="Was ravaged by a Thumper." />
+        <DeathEnemyThumper text="Got thumped by a Thumper." />
+        <DeathEnemyThumper text="Got ran down by a Thumper." />
+        <DeathEnemyThumper text="Was flattened by a Thumper." />
+        <DeathEnemyThumper text="Became the meal of a Thumper." />
+
+        <!-- 
+            TN: v45 Enemy Death Messages
+            Messages used for enemies added in v45.
+            Most of these enemies have multiple ways they can kill you, so make sure you don't mix them up.
+        -->
+
+        <DeathEnemyMaskedPlayerWear text="Donned the Mask." /> <!-- TN: Message used when the player is transformed into a Masked Player enemy -->
+        <DeathEnemyMaskedPlayerWear
+            text="Nobody cared who they were until they put on the Mask." /> <!-- TN: The Dark Knight Rises reference -->
+
+        <DeathEnemyMaskedPlayerVictim text="Was killed by a Masked coworker." /> <!-- TN: Message used when a Masked Player (even one that spawned naturally) attacks and kills a player. -->
+        <DeathEnemyMaskedPlayerVictim text="Became a tragedy at the hands of the Mask." /> <!-- TN: A reference to the Tragedy Mask that transforms players who pick it up. -->
+        <DeathEnemyMaskedPlayerVictim text="Trusted the wrong coworker." />
+        <DeathEnemyMaskedPlayerVictim text="Listened to the voices for too long." />
+        <DeathEnemyMaskedPlayerVictim text="Experienced the killing joke." />
+
+        <DeathEnemyNutcrackerKicked text="Was kicked to death by a Nutcracker." /> <!-- TN: Used when a Nutcracker kills a player that happens to walk in its path -->
+        <DeathEnemyNutcrackerKicked text="Got their nuts cracked by a Nutcracker." />
+        <DeathEnemyNutcrackerKicked text="Booted from the game by a Nutcracker." />
+        <DeathEnemyNutcrackerKicked text="Stared at the underside of a Nutcrackers boot." />
+
+        <DeathEnemyNutcrackerShot text="Got shot by a Nutcracker." /> <!-- TN: Used when a nutcracker -->
+        <DeathEnemyNutcrackerShot text="Was at the wrong end of a 21-gun salute." />
+        <DeathEnemyNutcrackerShot text="Was riddled with buckshot." />
+        <DeathEnemyNutcrackerShot text="Forgot their bulletproof vest." />
+        <DeathEnemyNutcrackerShot text="Forgot to stand still in-front of a Nutcracker." />
+
+        <!-- 
+            TN: Player Death Messages
+            These are messages for when the player dies due to player-related means,
+            such as murder or using an item improperly.
+        -->
+
+        <DeathPlayerJetpackGravity text="Fell while using a jetpack." /> <!-- TN: Message used when the player dies of fall damage while holding a jetpack. -->
+        <DeathPlayerJetpackGravity text="Flew too close to the sun." /> <!-- TN: Reference to Icarus of Greek mythology -->
+        <DeathPlayerJetpackGravity text="Ran out of fuel." />
+        <DeathPlayerJetpackGravity text="Experienced kinetic energy." />
+        <DeathPlayerJetpackGravity text="Missed their flight training." />
+
+        <DeathPlayerJetpackBlast text="Blew up while using a Jetpack." /> <!-- TN: Message used when the player uses the jetpack too long and it explodes. -->
+        <DeathPlayerJetpackBlast text="Turned into a firework." />
+        <DeathPlayerJetpackBlast text="Went out with a bang." />
+        <DeathPlayerJetpackBlast text="Missed their flight training." />
+
+        <DeathPlayerMurderMelee text="Was bludgeoned to death by a coworker." /> <!-- TN: Used when a player kills another player with a shovel. -->
+        <DeathPlayerMurderMelee text="Was the victim of a murder." />
+        <DeathPlayerMurderMelee text="Got murdered." />
+        <DeathPlayerMurderMelee text="Got betrayed by a coworker." />
+
+        <DeathPlayerMurderShotgun text="Was shot to death by a coworker." /> <!-- TN: Used when a player kills another player with the Nutcracker's shotgun. -->
+        <DeathPlayerMurderShotgun text="Was the victim of a murder." />
+        <DeathPlayerMurderShotgun text="Got murdered." />
+        <DeathPlayerMurderShotgun text="Was riddled with buckshot." />
+        <DeathPlayerMurderShotgun text="Forgot their bulletproof vest." />
+        <DeathPlayerMurderShotgun text="Annoyed the guy with the gun." />
+
+        <DeathPlayerLadder text="Got crushed by an Extension Ladder." /> <!-- TN: Used when a player stands underneath an Extension Ladder and gets crushed. -->
+        <DeathPlayerLadder text="Was squashed by an Extension Ladder." />
+        <DeathPlayerLadder text="Misunderstood climbing the corporate ladder." />
+
+        <DeathPlayerQuicksand text="Got stuck in quicksand." />
+        <DeathPlayerQuicksand text="Drowned in quicksand." />
+        <DeathPlayerQuicksand text="Struggled in quicksand." />
+
+        <DeathPlayerStunGrenade text="Got flashbanged by a coworker." /> <!-- TN: Yes, the stun grenade can do damage, but not very much. -->
+        <DeathPlayerStunGrenade text="Was the victim of a murder." />
+
+        <DeathOtherItemDropship text="Was crushed by the Item Dropship." /> <!-- TN: Used when a player stands underneath the Item Dropship and gets crushed. -->
+        <DeathOtherItemDropship text="Couldn't wait for their items." />
+        <DeathOtherItemDropship text="Got too impatient for their items." />
+        <DeathOtherItemDropship text="Tried to catch the Item Dropship." />
+
+        <!--
+            TN: Messages for the tentacle that kills players at the company building.
+            Performance reports don't show up at the company building so this is unused.
+        -->
+        <DeathOtherDepositItemsDesk text="Received a demotion." />
+        <DeathOtherDepositItemsDesk text="Was put on disciplinary leave." />
+        <DeathOtherDepositItemsDesk text="Skipped over the training manual." />
+
+
+        <DeathOtherLandmine text="Stepped on a landmine." />
+
+        <DeathOtherTurret text="Got shot by a turret." />
+
+        <DeathOtherLightning text="Was struck by lightning." />
+
+        <DeathUnknown text="Died somehow." />
+        <DeathUnknown text="Most sincerely dead." /> <!-- TN: Wizard of Oz reference -->
+        <DeathUnknown text="Expired in an inexplicable manner." />
+    </strings>
+</base>
