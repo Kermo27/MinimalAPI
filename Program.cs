@@ -17,26 +17,37 @@ app.UseHttpsRedirection();
 
 app.MapGet("/scan-directory", (string directoryPath) =>
 {
-    var baseDirLength = directoryPath.Length + 1;
-    var files = Directory.GetFiles(directoryPath, "*", SearchOption.AllDirectories)
-        .Select(path =>
-        {
-            using var sha256 = SHA256.Create();
-            var hashBytes = sha256.ComputeHash(File.ReadAllBytes(path));
-            var hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
-
-            var fileInfo = new FileInfo(path);
-            return new
+    try
+    {
+        var baseDirLength = directoryPath.Length + 1;
+        var files = Directory.GetFiles(directoryPath, "*", SearchOption.AllDirectories)
+            .Select(path =>
             {
-                Path = path.Substring(baseDirLength),
-                Name = Path.GetFileName(path),
-                Hash = hash,
-                Size = fileInfo.Length,
-                LastModified = fileInfo.LastWriteTimeUtc.ToString("o")
-            };
-        }).ToList();
+                using var sha256 = SHA256.Create();
+                var hashBytes = sha256.ComputeHash(File.ReadAllBytes(path));
+                var hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
 
-    return Results.Json(files);
+                var fileInfo = new FileInfo(path);
+                return new
+                {
+                    Path = path.Substring(baseDirLength),
+                    Name = Path.GetFileName(path),
+                    Hash = hash,
+                    Size = fileInfo.Length,
+                    LastModified = fileInfo.LastWriteTimeUtc.ToString("o")
+                };
+            }).ToList();
+
+        return Results.Json(files);
+    }
+    catch (DirectoryNotFoundException)
+    {
+        return Results.Problem("Directory not found", statusCode: StatusCodes.Status404NotFound);
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem($"An error occurred: {ex.Message}", statusCode: StatusCodes.Status500InternalServerError);
+    }
 });
 
 app.MapGet("/download-file", async (HttpContext context, string filename) =>
