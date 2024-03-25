@@ -15,16 +15,19 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/scan-directory", (string directoryPath) =>
+app.MapGet("/scan-directory", () =>
 {
     try
     {
+        string directoryPath = "./files";
         var baseDirLength = directoryPath.Length + 1;
         var files = Directory.GetFiles(directoryPath, "*", SearchOption.AllDirectories)
             .Select(path =>
             {
+                using var stream = File.OpenRead(path);
+                using var bufferedStream = new BufferedStream(stream, 1200000);
                 using var sha256 = SHA256.Create();
-                var hashBytes = sha256.ComputeHash(File.ReadAllBytes(path));
+                var hashBytes = sha256.ComputeHash(bufferedStream);
                 var hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
 
                 var fileInfo = new FileInfo(path);
@@ -50,19 +53,37 @@ app.MapGet("/scan-directory", (string directoryPath) =>
     }
 });
 
-app.MapGet("/download-file", async (HttpContext context, string filename) =>
+app.MapPost("/download-file", async (HttpContext context, string filename) =>
 {
     var filePath = Path.Combine("./files", filename);
     if (File.Exists(filePath))
     {
-        var fileContent = File.OpenRead(filePath);
         context.Response.Headers.Append("Content-Disposition", $"attachment; filename=\"{Path.GetFileName(filePath)}\"");
-        await context.Response.BodyWriter.WriteAsync(new ReadOnlyMemory<byte>(await File.ReadAllBytesAsync(filePath)));
+
+        using var fileStream = File.OpenRead(filePath);
+
+        await fileStream.CopyToAsync(context.Response.Body);
     }
     else
     {
         context.Response.StatusCode = StatusCodes.Status404NotFound;
         await context.Response.WriteAsync("File not found");
+    }
+
+});
+
+app.MapGet("/latest-version", () =>
+{
+    const string filename = "version.txt";
+    var filePath = Path.Combine("./files", filename);
+    if (File.Exists(filePath))
+    {
+        var fileContent = File.ReadAllText(filePath);
+        return Results.Text(fileContent);
+    }
+    else
+    {
+        return Results.Problem("Version file not found", statusCode: StatusCodes.Status404NotFound);
     }
 });
 
